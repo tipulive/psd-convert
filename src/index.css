@@ -201,7 +201,7 @@ ul.recharts-default-legend {
   flex: 1;
  
 }
-.iconActive.active {
+.activeIcon {
 color: red !important;
 }
 .circle-icon {
@@ -255,6 +255,13 @@ background-image: linear-gradient( 90deg, rgb(251,35,162) 0%, rgb(255,103,124) 1
 }
 .color-muted{
   color: rgb(174, 184, 196);
+}
+.color-muted:hover{
+  color: red !important;
+ 
+}
+a:hover{
+  color: red !important;
 }
 
 .arrowDown{

@@ -5,25 +5,31 @@ import UploadIcon from '@mui/icons-material/Upload';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import EditCalendarIcon from '@mui/icons-material/EditCalendar';
 import PaymentIcon from '@mui/icons-material/Payment';
+import { AppContext } from '../AppContext';
 import './TopNavbar.css';
 
 const TopNavbar = () => {
     const [isShown, setIsShown] = useState(true);
+    const [isActive, setIsActive] = useState(AppContext);
 
 
-    const toggleVisibility = () => {
+    const toggleVisibility = (index) => {
         setIsShown((prevIsShown) => !prevIsShown);
+        setIsActive(index);
+      };
+      const handleClick = (index) => {
+        setIsActive(index);
       };
   return (
     <div>
     <nav className="navbar">
      
-     <a href="/"><ArrowBackIos className='color-muted'/></a>
+     <a href="/" onClick={() => handleClick('1')}><ArrowBackIos className={`color-secondary ${isActive ==='1'?'color-secondary' : 'color-muted'}`} /></a>
     <h3 className='title-bar'>Bitcoin Wallet</h3>
-    <a href="#Hide" id="dropdownIcon"><MoreVert onClick={toggleVisibility} className='color-muted'/></a>
+    <a href="#Hide" id="dropdownIcon"><MoreVert onClick={() => toggleVisibility('2')} className='color-muted'/></a>
                 
     </nav>
-    <div className={`overlay  ${isShown ? 'd-none' : 'd-block'}`} onClick={toggleVisibility}> </div>
+    <div className={`overlay  ${isShown ? 'd-none' : 'd-block'}`} onClick={() => toggleVisibility('3')}> </div>
     <div className={`dropdown-content ${isShown ? 'd-none' : 'd-block'}`}>
         <ul>
                     

@@ -62,7 +62,7 @@ const Chart = () => {
   useEffect(() => {
     fetchChartData(activeTab).then((data) => {
       
-      console.log(data);
+     
       
 
 // Loop through the array and find the lowest pv value
