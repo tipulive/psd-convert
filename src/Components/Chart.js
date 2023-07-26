@@ -9,6 +9,8 @@ import Card from './Card';
 const Chart = () => {
   const { isContentVisible} = useContext(AppContext);
   const [activeTab, setActiveTab] = useState('day');
+  const [lowest, setLowest] = useState('4.899');
+  const [highest, setHighest] = useState('4.899');
   const [chartData, setChartData] = useState([]);
 
   // Simulate data fetching with a delay
@@ -17,17 +19,17 @@ const Chart = () => {
       day: [
         { name: 'Jan', uv: 4000, pv: 2400, amt: 2400 },
         { name: 'Feb', uv: 3000, pv: 1398, amt: 2210 },
-        { name: 'Mar', uv: 2000, pv: 9800, amt: 2290 },
+        { name: 'Mar', uv: 2000, pv: 9600, amt: 2290 },
         // Add more data for the Day tab
       ],
       week: [
         // Add data for the Week tab
         { name: 'Jan', uv: 4000, pv: 2400, amt: 2400 },
-        { name: 'Feb', uv: 4200, pv: 2400, amt: 2400 },
+        { name: 'Feb', uv: 4200, pv: 1300, amt: 2400 },
         { name: 'March', uv: 2000, pv:  6000, amt: 9000 },
-        { name: 'April', uv: 6000, pv: 9800, amt: 2290 },
+        { name: 'April', uv: 6000, pv: 9500, amt: 2290 },
         { name: 'May', uv: 6000, pv: 9800, amt: 2290 },
-        { name: 'June', uv: 6000, pv: 9800, amt: 2290 },
+        { name: 'June', uv: 6000, pv: 9700, amt: 2290 },
       ],
       month: [
         // Add data for the Month tab
@@ -36,16 +38,16 @@ const Chart = () => {
           { name: 'Feb', uv: 4200, pv: 2400, amt: 2400 },
           { name: 'March', uv: 2000, pv:  6000, amt: 9000 },
          
-          { name: 'June', uv: 6000, pv: 9800, amt: 2290 },
+          { name: 'June', uv: 6000, pv: 9000, amt: 2290 },
       ],
       year: [
           // Add data for the Week tab
-          { name: 'Jan', uv: 2000, pv: 2400, amt: 2400 },
+          { name: 'Jan', uv: 2000, pv: 1200, amt: 2400 },
           { name: 'Feb', uv: 3000, pv: 3200, amt: 2400 },
           { name: 'March', uv: 2000, pv:  6000, amt: 9000 },
           { name: 'April', uv: 3000, pv: 5000, amt: 6000 },
           { name: 'May', uv: 2000, pv: 3000, amt: 4290 },
-          { name: 'June', uv: 6000, pv: 9800, amt: 2290 },
+          { name: 'June', uv: 6000, pv: 8800, amt: 2290 },
         // Add data for the Year tab
       ],
     };
@@ -59,6 +61,25 @@ const Chart = () => {
 
   useEffect(() => {
     fetchChartData(activeTab).then((data) => {
+      
+      console.log(data);
+      
+
+// Loop through the array and find the lowest pv value
+const highestPv = data.reduce((max, obj) => {
+  const pv = obj.pv;
+  return pv > max.pv ? { pv, name: obj.name } : max;
+}, { pv: -Infinity, name: '' });
+
+
+setHighest(highestPv.pv);
+
+const lowestPv = data.reduce((min, obj) => {
+  const pv = obj.pv;
+  return pv < min.pv ? { pv, name: obj.name } : min;
+}, { pv: Infinity, name: '' });
+
+setLowest(lowestPv.pv);
       setChartData(data);
     });
   }, [activeTab]);
@@ -66,6 +87,8 @@ const Chart = () => {
 
   const handleTabClick = (value, index) => {
     setActiveTab(value);
+   
+    
    
     // Do something with the value and index in this parent component
   };
@@ -80,11 +103,11 @@ const Chart = () => {
 
       <div className="grid-container plr-10 ">
     <div className="grid-item">
-    <div className="dot-with-text color-danger">Lower2:<span>$4.895</span></div>
+    <div className="dot-with-text color-danger">Lower:<span>${lowest}</span></div>
     </div>
     <div className="grid-item">
     <div className="card-container">
-    <div className="dot-with-text color-success">Higher:<span>$6.857</span></div>
+    <div className="dot-with-text color-success">Higher:<span>${highest}</span></div>
     </div>
       
     </div>

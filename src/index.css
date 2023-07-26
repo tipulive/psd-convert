@@ -6,11 +6,7 @@ body, html {
   background: #f3f6f9;
   
 }
-.custom-class {
-  color: red;
-  font-size: 16px;
-  /* Add other custom styles as needed */
-}
+
 /* styles.css */
 .fade-in-out {
   opacity: 1;
