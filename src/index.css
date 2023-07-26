@@ -6,6 +6,11 @@ body, html {
   background: #f3f6f9;
   
 }
+.custom-class {
+  color: red;
+  font-size: 16px;
+  /* Add other custom styles as needed */
+}
 /* styles.css */
 .fade-in-out {
   opacity: 1;
@@ -131,6 +136,9 @@ padding: 20px;
 }
 .mrn-20{
   margin-right: -20px;
+}
+.mrn-30{
+  margin-right: -30px;
 }
 .mln-30{
   margin-left: -30px;

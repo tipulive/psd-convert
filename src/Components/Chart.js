@@ -3,6 +3,7 @@ import { AreaChart, Area, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer,Car
 
 import TabChart from './Tabs';
 import { AppContext } from '../AppContext'; 
+import Card from './Card';
 
 
 const Chart = () => {
@@ -70,20 +71,16 @@ const Chart = () => {
   };
   return (
     <div>
-       <div className="card-container ">
-       <div className="card prl-20  mw-85 colorBG-Unset">
-       
-       <div className="mt-05">
+      <Card className2=" prl-20  mw-85 colorBG-Unset">
+      <div className="mt-05">
        {isContentVisible && <TabChart  onTabClick={handleTabClick}  className="fade-in-out"/>}
        </div>
-       
-       </div>
-       </div>
-      <div className="card-container mt-07">
-      <div className="card p-20 mw-85">
+      </Card>
+     <Card className1="mt-07" className2="p-20 mw-85">
+
       <div className="grid-container plr-10 ">
     <div className="grid-item">
-    <div className="dot-with-text color-danger">Lower:<span>$4.895</span></div>
+    <div className="dot-with-text color-danger">Lower2:<span>$4.895</span></div>
     </div>
     <div className="grid-item">
     <div className="card-container">
@@ -132,8 +129,7 @@ const Chart = () => {
         </div>
       </div>
       </div>
-    </div>
-    </div>
+      </Card>
     </div>
   );
 };

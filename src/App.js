@@ -7,12 +7,18 @@ import BtcWallet from './Components/BtcWallet';
 import BuySell from './Components/BuySell';
 import { AppContext } from './AppContext'; // Import the context
 
+
+
+
 function App() {
   const { isContentVisible} = useContext(AppContext);
   return (
     <div className="App">
-     
+    
+    
       <BtcWallet/>
+      
+    
       <TopNavbar/>
     
       <Chart />

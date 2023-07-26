@@ -1,6 +1,7 @@
 import React from 'react';
 
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import Card from './Card';
 
 const BuySell = () => {
   const Bsell = {
@@ -14,30 +15,22 @@ const BuySell = () => {
     <div className="  mw-85">
     <div className="grid-container">
     <div className="grid-item">
-    <div className="card-container">
-      
-      <div className="card div2-cut mln-30">
+      <Card className2="div2-cut mln-30">
       <div  className="centered-div">
       <div className="circle-icon colorGd-blue mbn-05rem"><AttachMoneyIcon className='color-primary'/></div>
           <p style={Bsell}>Buy BTC</p>
     </div>
-    </div>
-       
-    
-    </div>
+      </Card>
+   
     </div>
     <div className="grid-item">
-    <div className="divflex">
-    
-      <div className="card div2-cut mrn-20">
-     <div  className="centered-div">
+    <Card className2="div2-cut mrn-30">
+    <div  className="centered-div">
      <div className="circle-icon colorGd-pink mbn-05rem"><AttachMoneyIcon className='color-primary'/></div>
          <p style={Bsell}>Sell BTC</p>
      </div>
-    </div>
-       
-   
-    </div>
+    </Card>
+    
       
     </div>
   </div>
