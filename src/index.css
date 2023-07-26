@@ -163,7 +163,7 @@ padding: 20px;
 /* Set height for the whole body to 100% */
 body {
   height: auto;
-  min-height: 130vh;
+  min-height: 120vh;
 }
 
 /* Style the content area */
@@ -175,7 +175,10 @@ body {
 
 @media (max-width: 767px) {
  
-  
+  body {
+    height: auto;
+    min-height: 200vh;
+  }
 }
 
 /* In your CSS file or component styles */
