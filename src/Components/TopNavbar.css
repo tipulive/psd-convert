@@ -1,0 +1,92 @@
+.navbar {
+    position: fixed; /* Fix the navbar at the top of the screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  
+  
+  /* Style the title in the navbar */
+  .navbar h1 {
+    margin: 0;
+  }
+  
+  /* Style the back button and dot icons */
+  .navbar a i {
+    font-size: 24px;
+  }
+  .navbar a:last-child {
+    padding-right: 10px;
+  }
+  
+  /* Style the overlay */
+  .overlay {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  }
+  
+  /* Style the dropdown content */
+  .dropdown-content {
+    top: 60px; /* Position the dropdown menu right below the navbar */
+    right: 10px;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding-left: 10px;
+    z-index: 2; /* Ensure the dropdown menu is above the overlay */
+  }
+  .dropMenu{
+   position: absolute;
+   right: 10px;
+ font-size: 15px !important;
+  }
+  .d-none{
+    display: none;
+  }
+  .d-block{
+    display: block;
+  }
+  /* Style the menu items */
+  .dropdown-content ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .dropdown-content li {
+    margin: 10px 0;
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+  }
+  
+  .dropdown-content li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding-right: 10px; /* Add left padding for the icon */
+  }
+  
+  .dropdown-content li a i {
+    font-size: 18px; /* Adjust icon size if needed */
+    margin-right: 10px; /* Add right margin for spacing between icon and text */
+  }
+ 
+  .menu-divider {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #ccc;
+    margin: 5px 0;
+  }

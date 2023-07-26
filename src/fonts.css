@@ -1,0 +1,20 @@
+/* fonts.css */
+
+/* Define the font-face with font-family and src for each format */
+@font-face {
+    font-family: 'SFProDisplay';
+  
+    /* Add more src for other formats if needed */
+  
+    src: url('./fonts/FontsFree-Net-SFProDisplay-Regular.ttf') format('truetype');
+  }
+  
+  /* Apply the custom font to specific elements */
+  body {
+    font-family: 'SFProDisplay', sans-serif;
+    
+    
+  }
+  
+  /* Add more styles for other elements as needed */
+  

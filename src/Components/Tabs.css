@@ -1,0 +1,45 @@
+/* Tabs.module.css */
+.tabsContainer {
+  width: 100%; /* Make the container full-width */
+  margin: 20px auto;
+}
+
+.tabs {
+  display: flex;
+
+  /*width: 100%; /* Make the tabs full-width */
+  
+  justify-content: space-between;
+}
+
+.tab {
+  line-height: 1.2;
+    font-weight: 500;
+    color: rgb(174, 184, 196);
+    font-size: 12px;
+  cursor: pointer;
+ 
+}
+
+.tab:last-child {
+  border-right: none; /* Remove the right border from the last tab */
+}
+
+.tab.active {
+ /* border-bottom: 2px solid #007bff;
+  color: #007bff;*/
+  background-color: rgb(174, 184, 196);
+  -webkit-border-radius: 23;
+  -moz-border-radius: 23;
+  border-radius: 23px;
+  font-family: Arial;
+  color: #ffffff;
+  padding: 5px 15px 5px 15px;
+  text-decoration: none;
+}
+
+.tabContent {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
